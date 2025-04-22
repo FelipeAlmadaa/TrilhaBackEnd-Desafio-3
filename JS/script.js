@@ -1,14 +1,14 @@
 // Funções de navegação corrigidas (usando './' para caminhos relativos)
 function abrirPagina() {
-  window.location.href = "./inscricao.html";
+  window.location.href = "inscricao.html";
 }
 
 function voltarPagina() {
-  window.location.href = "./index.html";
+  window.location.href = "index.html";
 }
 
 function loginPage() {
-  window.location.href = "./login.html";
+  window.location.href = "login.html";
 }
 // Verificar estado de login ao carregar a página
 function checkLoginStatus() {
@@ -59,7 +59,7 @@ function logout() {
   }
 
   // Redireciona para a página inicial
-  window.location.href = "index.html";
+  window.location.href = "./index.html";
 }
 // Animação de scroll
 document.addEventListener("DOMContentLoaded", function () {
@@ -416,7 +416,7 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Login realizado com sucesso!");
         loginForm.reset();
         errorUsu.textContent = "";
-        window.location.href = "index.html";
+        window.location.href = "./index.html";
       } else {
         showError("Nome de usuário ou senha incorretos.", errorUsu);
       }
