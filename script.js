@@ -1,16 +1,15 @@
-// Funções de navegação
+// Funções de navegação corrigidas (usando './' para caminhos relativos)
 function abrirPagina() {
-  window.location.href = "inscricao.html";
+  window.location.href = "./inscricao.html";
 }
 
 function voltarPagina() {
-  window.location.href = "/Html/index.html";
+  window.location.href = "./index.html";
 }
 
 function loginPage() {
-  window.location.href = "login.html";
+  window.location.href = "./login.html";
 }
-
 // Verificar estado de login ao carregar a página
 function checkLoginStatus() {
   const isLoggedIn = localStorage.getItem("isLoggedIn");
