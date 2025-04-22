@@ -1,0 +1,116 @@
+header {
+  opacity: 90%;
+  height: 80px;
+  width: 100%;
+  background-color: #2135a6;
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+  position: fixed; /* Fixa o header no topo */
+  top: 0; /* Coloca o header no topo da página */
+  left: 0; /* Garante que o header ocupe toda a largura */
+  z-index: 1000; /* Garante que o header ficará acima de outros elementos */
+}
+
+.header-size {
+  display: flex;
+  align-items: center;
+  max-width: 1600px;
+  width: 100%; /* Ocupa 100% da largura disponível */
+  margin: 0 auto; /* Centraliza a div horizontalmente */
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Alinha o menu à direita */
+}
+
+.img-logo {
+  display: flex;
+  align-items: center;
+  margin-right: 1020px;
+}
+
+.img-logo img {
+  cursor: pointer;
+  height: 35px;
+}
+
+.menu ul {
+  display: flex;
+  list-style-type: none; /* Remove os marcadores de lista */
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  white-space: nowrap;
+  font-size: 18px;
+  color: white;
+  margin: 0 10px;
+  padding: 5px 0;
+  position: relative; /* Necessário para o pseudo-elemento ::after */
+  cursor: pointer;
+}
+
+.menu li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease; /* Animação suave */
+}
+
+.menu li:hover::after {
+  width: 100%; /* Expande a linha */
+}
+/* ===== VERSÃO MOBILE ===== */
+@media (max-width: 768px) {
+  .img-logo {
+    display: none; /* Remove a imagem */
+  }
+
+  .menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .menu ul {
+    gap: 15px;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .menu li {
+    font-size: 14px;
+    padding: 5px 0;
+  }
+
+  /* Dropdown mobile */
+  #userDropdown {
+    position: static;
+    margin-top: 5px;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    height: 50px;
+    padding: 0 10px;
+  }
+
+  .menu li {
+    font-size: 13px;
+  }
+
+  .menu ul {
+    gap: 8px;
+  }
+}
